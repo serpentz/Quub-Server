@@ -7,7 +7,7 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs gh
 
 RUN mkdir -p /app
 RUN mkdir -p /usr/local/nvm
-WORKDIR /app
+WORKDIR /myapp
 
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
 RUN apt-get install -y nodejs
