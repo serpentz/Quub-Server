@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :group_admins
   resources :user_groups
   resources :groups
   resources :users

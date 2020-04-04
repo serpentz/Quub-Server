@@ -8,9 +8,9 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+       current_user: Adapter::Auth.new.current_user(request.headers[:Authorization])
     }
     result = MyappSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
